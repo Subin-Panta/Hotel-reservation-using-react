@@ -1,23 +1,22 @@
 import React from 'react'
-import './App.css'
-
-import Home from './pages/Home'
-import Rooms from './pages/Rooms'
-import SingleRoom from './pages/SingleRoom'
-import Error from './pages/Error'
-import {Route, Link, Switch} from 'react-router-dom'
-class App extends React.Component{
-render(){
+import "./App.css"
+import {Route,Switch} from "react-router-dom"
+import Home from "./pages/Home"
+import Error from "./pages/Error"
+import Rooms from "./pages/Rooms"
+import SingleRoom from "./pages/SingleRoom"
+import Navbar from './components/Navbar'
+function App () {
   return(
-   <div>
-     <switch>
-     <Route exact path= "/" component={Home} />
-     <Route exact path= "/rooms/"  component={Rooms} />
-     <Route exact path= "/rooms/:slug"  component={SingleRoom} />
-     <Route component={Error} />
-    </switch>
-  </div>
+    <div>
+      <Navbar />
+    <Switch>
+    <Route exact path="/" component={Home}/>
+    <Route exact path ="/rooms/" component = {Rooms}/>
+    <Route exact path="/rooms/:slug" component = {SingleRoom} />
+    <Route component={Error} />
+    </Switch>
+    </div>
   )
-}
-}
+} 
 export default App
