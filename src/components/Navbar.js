@@ -3,20 +3,14 @@ import logo from '../images/logo.svg'
 import {FaAlignRight} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
 export default class Navbar extends React.Component {
-constructor(){
-    super()
-    this.state={
-        isOpen:false
-    }
-    this.handletoggle=this.handletoggle.bind(this)
+state={
+    isOpen:false
 }
-handletoggle(){
-    this.setState(prevState => {
-        return{
-           isOpen: !prevState.isOpen
-        }
-        
-    })
+handletoggle = () => {
+    this.setState({
+        isOpen : !this.state.isOpen   
+    }
+    )
 }
     render()
 {
