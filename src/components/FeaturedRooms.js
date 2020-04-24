@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React,{ useContext } from 'react'
+import { RoomContext } from "../Context";
 
-export default class FeaturedRooms extends Component {
-    render() {
-        return (
-            <div>
-                hello from featured rooms
-            </div>
-        )
-    }
+export default function FeaturedRooms() {
+    const {greeting, no}= useContext(RoomContext)
+    return (
+        <div>
+            sdasda {greeting} {no}
+        </div>
+    )
 }
