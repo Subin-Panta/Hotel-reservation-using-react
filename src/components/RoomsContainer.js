@@ -10,7 +10,6 @@ export default function RoomsContainer() {
     {
         return<Loading />
     }
-    console.log(sortedRooms)
     return (
         <div>
            
