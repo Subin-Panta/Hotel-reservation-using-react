@@ -6,12 +6,16 @@ import Loading from './loading'
 
 export default function RoomsContainer() {
     const {loading,sortedRooms,rooms} = useContext(RoomContext)
-    console.log(value)
+    if (loading)
+    {
+        return<Loading />
+    }
+    console.log(sortedRooms)
     return (
         <div>
-            Hello RoomsContainer here
-            <RoomsFilter />
-            <RoomsList />
+           
+            <RoomsFilter rooms={rooms}/>
+            <RoomsList rooms={sortedRooms}/>
         </div>
     )
 }
