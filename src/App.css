@@ -465,8 +465,8 @@ h6 {
   padding: 5rem 0;
 }
 .filter-form {
-  width: 60vw;
-  margin: 0 auto;
+  width: 60px;
+  margin: 100px auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(202px, 1fr));
   grid-row-gap: 2rem;
