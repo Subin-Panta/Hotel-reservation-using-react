@@ -18,7 +18,9 @@ export default function RoomsFilter({rooms}) {
         pets}= useContext ( RoomContext )
         let types=getUnique(rooms, 'type')
         types =['all',...types]
-       
+        let people=getUnique(rooms, 'capacity')
+        people= ['0',...people]
+
         
     return (
         
@@ -26,12 +28,23 @@ export default function RoomsFilter({rooms}) {
             <Title title="search Rooms" />
             <form className="filter-form">
                 <div className="form-group">
-                    <label htmlFor="type">room type</label>
+                <label htmlFor="type">room type</label>
                     <select className="form-control" name="type" id="type" value={type} onChange={handleChange}>
                     {types.map((item,index)=> {
                         return <option value={item} key={index}>{item} </option>
                     })}
                     </select>
+                    <label htmlFor="capacity">Guest</label>
+                    <select className="form-control" name="capacity" id="capacity" value={capacity} onChange={handleChange}>
+                    {people.map((item,index)=> {
+                        return <option value={item} key={index}>{item} </option>
+                    })}
+                    </select>
+                    <div className="form-group">
+                <label htmlFor="price">Price ${price}</label>
+                <input type="range" name="price" min={minPrice} max={maxPrice} id="price" value={price} onChange={handleChange} className="form-control" />
+
+                    </div>
                 </div>
             </form>
         </section>

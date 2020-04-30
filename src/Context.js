@@ -8,7 +8,7 @@ export default class RoomProvider extends Component {
         featuredRooms:[],
         loading: true,
         type: 'all',
-        capacity:1,
+        capacity:0,
         price:0,
         minPrice:0,
         maxPrice:0,
@@ -65,10 +65,17 @@ export default class RoomProvider extends Component {
         let {
             rooms,type,capacity,price,minSize,maxSize,breakfast,pets
         }= this.state
+        capacity = parseInt(capacity)
+        price =parseInt(price)
         let tempRooms=[...rooms]
         if(type !=='all'){
             tempRooms=tempRooms.filter(room => room.type === type)
         }
+        if(capacity !==0){
+            tempRooms=tempRooms.filter(room => room.capacity === capacity)
+        }
+        tempRooms=tempRooms.filter(room=>room.price <=price)
+        
         this.setState({
             sortedRooms:tempRooms
         })
